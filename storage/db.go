@@ -5,7 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-// DB is for get the db connection
+// DB creates the database connection and use it as a middleware for all handlers.
 func DB(connString string) gin.HandlerFunc {
 	db, err := gorm.Open("mysql", connString)
 	db.LogMode(true)
